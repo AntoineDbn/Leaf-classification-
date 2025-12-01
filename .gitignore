@@ -1,22 +1,19 @@
-# Byte-compiled / optimized / DLL files
+
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Environnements virtuels (Indispensable)
+
 venv/
 env/
 .env
 
-# Données (Pour ne pas saturer GitHub avec des csv de 100Mo)
 data/
 *.csv
 *.xlsx
 
-# Jupyter Notebook checkpoints
 .ipynb_checkpoints
 
-# VS Code settings (optionnel, mais propre)
 .vscode/
 
 # MacOS
