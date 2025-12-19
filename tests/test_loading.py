@@ -1,7 +1,6 @@
 from src.data_loader import LeafDataLoader
 import os
 
-# Chemins relatifs (OS independent)
 train_path = os.path.join('data', 'train.csv') # Assure-toi que tes CSV sont dans un dossier 'data'
 test_path = os.path.join('data', 'test.csv')
 
