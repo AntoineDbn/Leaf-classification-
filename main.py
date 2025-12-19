@@ -1,8 +1,4 @@
 import os
-
-# --- CORRECTION DU BUG WINDOWS (Message rouge) ---
-# On fixe manuellement le nombre de cœurs pour éviter que joblib ne cherche 'wmic'
-# Cela supprime le Warning [WinError 2]
 os.environ['LOKY_MAX_CPU_COUNT'] = '4' 
 
 from src.data_loader import LeafDataLoader
@@ -12,7 +8,6 @@ from src.visualization import plot_confusion_matrix, plot_cv_results
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 import pandas as pd
-# Plus d'import de tqdm ici
 
 def main():
     # ---------------------------------------------------------
