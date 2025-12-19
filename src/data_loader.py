@@ -4,8 +4,7 @@ import os
 
 class LeafDataLoader:
     def __init__(self, raw_data_dir='data/raw'):
-        # C'est ici que la correction a lieu : on construit les chemins
-        # automatiquement à partir du dossier donné
+        # construit les chemins automatiquement à partir du dossier donné
         self.train_path = os.path.join(raw_data_dir, 'train.csv')
         self.test_path = os.path.join(raw_data_dir, 'test.csv')
         self.label_encoder = LabelEncoder()
@@ -29,11 +28,10 @@ class LeafDataLoader:
         X = df_train.drop(['id', 'species'], axis=1)
         y_raw = df_train['species']
 
-        # Préparation soumission Kaggle
+        # Préparation soumission
         test_ids = df_test['id']
         X_test = df_test.drop(['id'], axis=1)
 
-        # Encodage (String -> Int)
         y = self.label_encoder.fit_transform(y_raw)
         
         return X, y, X_test, test_ids, self.label_encoder.classes_
